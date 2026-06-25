@@ -1,0 +1,13 @@
+# .beads — Task Tracker
+# States: ☐ to do  |  ▶ in progress  |  ⌛ waiting  |  ☑ done
+#
+# Format: [state] Task title
+
+☑ Set up git and push project to GitHub
+☑ Create agent_loop.md with Ayesha example
+☑ Fix CLAUDE.md — was empty on GitHub after first push
+☑ Create memory.md journal with 5 real work-session entries
+☑ Reorganize project into notes/ and instructions/ folders
+☑ Write structure.md project map
+☑ Set up Beads task tracker and run end-to-end
+☐ Push structure.md and .beads to GitHub
