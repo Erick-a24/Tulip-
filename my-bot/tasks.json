@@ -1,0 +1,187 @@
+﻿{
+    "settings":  {
+                     "bot_name":  "Barry",
+                     "check_interval_minutes":  2,
+                     "away_schedule_cron":  "0 8-19 * * 1-5",
+                     "away_hours_start":  "08:00",
+                     "away_hours_end":  "19:00",
+                     "ask_before_risky":  true,
+                     "away_mode_enabled":  true
+                 },
+    "jobs":  [
+                 {
+                     "id":  "job_2026070308155092_2421",
+                     "title":  "Test job",
+                     "description":  "Checking the fix",
+                     "priority":  "Medium",
+                     "status":  "done",
+                     "result_note":  "Connectivity test — server confirmed working.",
+                     "created_at":  "2026-07-03T08:15:50.9353504Z",
+                     "updated_at":  "2026-07-03T09:16:50.7115279Z"
+                 },
+                 {
+                     "id":  "job_2026070308175133_7842",
+                     "title":  "Draft an email reinder to all parents who took registration forms with them, they should attach copy of Birth Certificate for Enrollment Process completion",
+                     "description":  "Create a very simple mail draft to send to to all new parents joining at all campuses to attach a copy of birth certificate on the application forms.",
+                     "priority":  "Medium",
+                     "status":  "done",
+                     "result_note":  "DRAFT EMAIL — awaiting your approval before sending.\n\nSubject: Action Required: Birth Certificate Copy for Enrollment Completion\n\nDear Parent/Guardian,\n\nThank you for choosing Silverleaf for your child\u0027s education.\n\nTo complete your child\u0027s enrollment, please attach a copy of their Birth Certificate to the application form before submitting it.\n\nThis is required for all students joining at any of our campuses. Without it, we are unable to finalise the registration.\n\nIf you have already submitted your form, kindly bring or send a copy of the Birth Certificate to your campus office at your earliest convenience.\n\nShould you have any questions, please do not hesitate to contact us.\n\nWarm regards,\nSilverleaf School Administration\n\n---\nVerifier scores: Completeness=5 Accuracy=5 Usability=4 (avg 4.7 — Pass)",
+                     "created_at":  "2026-07-03T08:17:51.3369123Z",
+                     "updated_at":  "2026-07-03T09:18:24.9340054Z"
+                 },
+                 {
+                     "id":  "job_2026070614290624_5775",
+                     "title":  "Draft reply to Mrs. Fatuma",
+                     "description":  "Mrs. Fatuma called asking about school fees and the enrollment deadline for her daughter joining Grade 3. Fees are 450,000 TZS per term. Enrollment deadline is July 31st. She also asked if there is a sibling discount (there is not).",
+                     "priority":  "High",
+                     "status":  "done",
+                     "result_note":  "DRAFT EMAIL — awaiting your approval.\n\nSubject: Enrollment Enquiry - Grade 3 Admission\n\nDear Mrs. Fatuma,\n\nThank you for reaching out to us regarding your daughter\u0027s enrollment at Silverleaf.\n\nI am happy to share the following details:\n\nSchool Fees: The fees for Grade 3 are 450,000 TZS per term.\n\nEnrollment Deadline: To secure your daughter\u0027s place, all enrollment documents must be submitted by 31st July 2026.\n\nRegarding a sibling discount — we do not currently offer a sibling discount, but we would be glad to discuss payment plan options if that would be helpful.\n\nPlease do not hesitate to contact us if you have any further questions. We look forward to welcoming your daughter to Silverleaf.\n\nWarm regards,\nSilverleaf School Administration\n\n---\nVerifier scores: Completeness=5 Accuracy=5 Usability=5 (avg 5.0 — Pass)",
+                     "created_at":  "2026-07-06T14:29:06.2648006Z",
+                     "updated_at":  "2026-07-08T05:34:41.2214590Z"
+                 },
+                 {
+                     "id":  "job_2026070805385096_2833",
+                     "title":  "Send a text reminder to all Partner Organizations to complete their 2nd Term Fee Payments and to collect their student\u0027s gate pass on saturday.",
+                     "description":  "I want you to send a text reminder to all the partner with Kids at the school to complete their 2nd term payments and if possible by Saturday to visit the campus to collect gate passes for their kids to be in class.",
+                     "priority":  "High",
+                     "status":  "done",
+                     "result_note":  "DRAFT TEXT MESSAGE — awaiting your approval before sending.\n\nDear Partner,\n\nThis is a reminder from Silverleaf School. We kindly ask you to complete your 2nd Term fee payment at your earliest convenience.\n\nAdditionally, please visit the campus this Saturday to collect your child\u0027s gate pass, which is required for access to class.\n\nFor any queries, please contact our administration office. Thank you.\n\nSilverleaf School Administration\n\n---\nVerifier scores: Completeness=5 Accuracy=5 Usability=4 (avg 4.7 - Pass)",
+                     "created_at":  "2026-07-08T05:38:50.9645307Z",
+                     "updated_at":  "2026-07-08T19:18:52.9440973Z"
+                 },
+                 {
+                     "id":  "job_2026070819310476_838",
+                     "title":  "Daily Wrap-Up",
+                     "description":  "End of day - read today notes in notes/ and write a dated summary to log/ following the daily-wrapup skill.",
+                     "priority":  "Medium",
+                     "status":  "done",
+                     "result_note":  "Wrap-up written to log/2026-07-08-wrapup.md. Sections: Done (6 items), Doing (2 items), Next (4 items).",
+                     "created_at":  "2026-07-08T19:31:04.7752282Z",
+                     "updated_at":  "2026-07-08T19:32:23.0265209Z"
+                 }
+             ],
+    "log":  [
+                {
+                    "time":  "2026-07-03T08:15:50.9363503Z",
+                    "job_id":  "job_2026070308155092_2421",
+                    "job_title":  "Test job",
+                    "action":  "Job added",
+                    "outcome":  "waiting"
+                },
+                {
+                    "time":  "2026-07-03T08:17:51.3369123Z",
+                    "job_id":  "job_2026070308175133_7842",
+                    "job_title":  "Draft an email reinder to all parents who took registration forms with them, they should attach copy of Birth Certificate for Enrollment Process completion",
+                    "action":  "Job added",
+                    "outcome":  "waiting"
+                },
+                {
+                    "time":  "2026-07-03T09:16:50.7222891Z",
+                    "job_id":  "job_2026070308155092_2421",
+                    "job_title":  "Test job",
+                    "action":  "Completed",
+                    "outcome":  "done"
+                },
+                {
+                    "time":  "2026-07-03T09:16:59.8412790Z",
+                    "job_id":  "job_2026070308175133_7842",
+                    "job_title":  "Draft an email reinder to all parents who took registration forms with them, they should attach copy of Birth Certificate for Enrollment Process completion",
+                    "action":  "Started",
+                    "outcome":  "working"
+                },
+                {
+                    "time":  "2026-07-03T09:17:40.2768929Z",
+                    "job_id":  "job_2026070308175133_7842",
+                    "job_title":  "Draft an email reinder to all parents who took registration forms with them, they should attach copy of Birth Certificate for Enrollment Process completion",
+                    "action":  "Completed | Scores: completeness=5 accuracy=5 usability=4",
+                    "outcome":  "needs_ok"
+                },
+                {
+                    "time":  "2026-07-03T09:18:24.9340054Z",
+                    "job_id":  "job_2026070308175133_7842",
+                    "job_title":  "Draft an email reinder to all parents who took registration forms with them, they should attach copy of Birth Certificate for Enrollment Process completion",
+                    "action":  "Owner approved",
+                    "outcome":  "done"
+                },
+                {
+                    "time":  "2026-07-06T14:29:06.2648006Z",
+                    "job_id":  "job_2026070614290624_5775",
+                    "job_title":  "Draft reply to Mrs. Fatuma",
+                    "action":  "Job added",
+                    "outcome":  "waiting"
+                },
+                {
+                    "time":  "2026-07-06T21:09:15.3316842Z",
+                    "job_id":  "job_2026070614290624_5775",
+                    "job_title":  "Draft reply to Mrs. Fatuma",
+                    "action":  "Started",
+                    "outcome":  "working"
+                },
+                {
+                    "time":  "2026-07-07T09:18:30.1506283Z",
+                    "job_id":  "job_2026070614290624_5775",
+                    "job_title":  "Draft reply to Mrs. Fatuma",
+                    "action":  "Completed | Scores: completeness=5 accuracy=5 usability=5",
+                    "outcome":  "needs_ok"
+                },
+                {
+                    "time":  "2026-07-08T05:34:41.2214590Z",
+                    "job_id":  "job_2026070614290624_5775",
+                    "job_title":  "Draft reply to Mrs. Fatuma",
+                    "action":  "Owner approved",
+                    "outcome":  "done"
+                },
+                {
+                    "time":  "2026-07-08T05:38:50.9645307Z",
+                    "job_id":  "job_2026070805385096_2833",
+                    "job_title":  "Send a text reminder to all Partner Organizations to complete their 2nd Term Fee Payments and to collect their student\u0027s gate pass on saturday.",
+                    "action":  "Job added",
+                    "outcome":  "waiting"
+                },
+                {
+                    "time":  "2026-07-08T19:16:32.2939590Z",
+                    "job_id":  "job_2026070805385096_2833",
+                    "job_title":  "Send a text reminder to all Partner Organizations to complete their 2nd Term Fee Payments and to collect their student\u0027s gate pass on saturday.",
+                    "action":  "Started",
+                    "outcome":  "working"
+                },
+                {
+                    "time":  "2026-07-08T19:16:58.7738876Z",
+                    "job_id":  "job_2026070805385096_2833",
+                    "job_title":  "Send a text reminder to all Partner Organizations to complete their 2nd Term Fee Payments and to collect their student\u0027s gate pass on saturday.",
+                    "action":  "Completed | Scores: completeness=5 accuracy=5 usability=4",
+                    "outcome":  "needs_ok"
+                },
+                {
+                    "time":  "2026-07-08T19:18:52.9521647Z",
+                    "job_id":  "job_2026070805385096_2833",
+                    "job_title":  "Send a text reminder to all Partner Organizations to complete their 2nd Term Fee Payments and to collect their student\u0027s gate pass on saturday.",
+                    "action":  "Owner approved",
+                    "outcome":  "done"
+                },
+                {
+                    "time":  "2026-07-08T19:31:04.7752282Z",
+                    "job_id":  "job_2026070819310476_838",
+                    "job_title":  "Daily Wrap-Up",
+                    "action":  "Job added",
+                    "outcome":  "waiting"
+                },
+                {
+                    "time":  "2026-07-08T19:31:18.2513124Z",
+                    "job_id":  "job_2026070819310476_838",
+                    "job_title":  "Daily Wrap-Up",
+                    "action":  "Started",
+                    "outcome":  "working"
+                },
+                {
+                    "time":  "2026-07-08T19:32:23.0424842Z",
+                    "job_id":  "job_2026070819310476_838",
+                    "job_title":  "Daily Wrap-Up",
+                    "action":  "Completed | Scores: completeness=5 accuracy=5 usability=5",
+                    "outcome":  "done"
+                }
+            ],
+    "corrections":  [
+
+                    ]
+}

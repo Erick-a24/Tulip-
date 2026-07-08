@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Barry</title>
+<style>
+:root {
+  --bg:      #f0f2f5;
+  --card:    #ffffff;
+  --border:  #e5e7eb;
+  --text:    #111827;
+  --muted:   #6b7280;
+  --primary: #1d4ed8;
+  --green:   #15803d;
+  --red:     #b91c1c;
+  --amber:   #92400e;
+  --blue:    #1e40af;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.header {
+  background: #111827;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 58px;
+}
+.header-brand { display: flex; align-items: center; gap: 10px; }
+.header-brand h1 { font-size: 1.25rem; font-weight: 700; }
+.header-brand p  { font-size: 0.78rem; color: #9ca3af; margin-top: 1px; }
+.status-pill {
+  display: flex; align-items: center; gap: 7px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.78rem; color: #d1d5db;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; flex-shrink: 0; }
+.dot.off { background: #ef4444; }
+
+/* ── Layout ─────────────────────────────────────────────────── */
+.wrap { max-width: 740px; margin: 0 auto; padding: 22px 16px 40px; }
+
+/* ── Card ───────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+  margin-bottom: 18px;
+}
+.section-title {
+  font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.07em; color: var(--muted); margin-bottom: 14px;
+}
+
+/* ── Form ───────────────────────────────────────────────────── */
+.field { margin-bottom: 11px; }
+label { display: block; font-size: 0.82rem; font-weight: 500; color: var(--muted); margin-bottom: 4px; }
+input[type=text], textarea, select {
+  width: 100%; border: 1px solid var(--border); border-radius: 7px;
+  padding: 8px 11px; font-size: 0.92rem; font-family: inherit;
+  color: var(--text); background: #fafafa; transition: border-color .15s;
+}
+input[type=text]:focus, textarea:focus, select:focus {
+  outline: none; border-color: var(--primary); background: #fff;
+}
+textarea { height: 74px; resize: vertical; }
+.btn {
+  border: none; border-radius: 7px; padding: 9px 20px;
+  font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: filter .15s;
+}
+.btn:hover { filter: brightness(0.88); }
+.btn-dark    { background: #111827; color: #fff; margin-top: 4px; }
+.btn-green   { background: #16a34a; color: #fff; padding: 7px 14px; font-size: 0.84rem; }
+.btn-red     { background: #dc2626; color: #fff; padding: 7px 14px; font-size: 0.84rem; }
+
+/* ── Badges ─────────────────────────────────────────────────── */
+.badge {
+  display: inline-block; font-size: 0.72rem; font-weight: 700;
+  padding: 2px 9px; border-radius: 999px; white-space: nowrap;
+}
+.b-waiting   { background: #f3f4f6; color: #374151; }
+.b-working   { background: #dbeafe; color: var(--blue); }
+.b-done      { background: #dcfce7; color: var(--green); }
+.b-stuck     { background: #fee2e2; color: var(--red); }
+.b-needs_ok  { background: #fef3c7; color: var(--amber); }
+.p-High      { color: #dc2626; font-weight: 700; }
+.p-Medium    { color: #d97706; font-weight: 600; }
+.p-Low       { color: var(--muted); }
+
+/* ── Job cards ───────────────────────────────────────────────── */
+.job {
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 13px 15px; margin-bottom: 9px; background: var(--card);
+}
+.job.needs_ok { border-color: #fbbf24; background: #fffdf5; }
+.job.stuck    { border-color: #fca5a5; background: #fff8f8; }
+.job.done     { opacity: 0.68; }
+.job-top {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 10px; margin-bottom: 4px;
+}
+.job-title { font-weight: 600; font-size: 0.96rem; flex: 1; }
+.job-right  { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
+.job-desc   { font-size: 0.85rem; color: var(--muted); margin-bottom: 5px; }
+.job-result {
+  font-size: 0.85rem; color: #374151;
+  background: #f9fafb; border-left: 3px solid #d1d5db;
+  padding: 7px 10px; border-radius: 0 6px 6px 0;
+  margin: 7px 0; white-space: pre-wrap;
+}
+.job-actions { display: flex; gap: 8px; margin-top: 9px; }
+
+/* ── Log ─────────────────────────────────────────────────────── */
+.log-row {
+  display: flex; gap: 10px; padding: 6px 0;
+  border-bottom: 1px solid #f3f4f6; font-size: 0.82rem; align-items: baseline;
+}
+.log-row:last-child { border: none; }
+.log-time   { color: var(--muted); white-space: nowrap; min-width: 115px; }
+.log-body   { flex: 1; }
+.log-name   { font-weight: 500; }
+.log-done   { color: var(--green); }
+.log-stuck  { color: var(--red); }
+.log-wait   { color: var(--muted); }
+.log-ok     { color: var(--amber); }
+
+/* ── Empty state ─────────────────────────────────────────────── */
+.empty { text-align: center; padding: 28px 0; color: var(--muted); font-size: 0.88rem; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-brand">
+    <span style="font-size:1.5rem;line-height:1">🤖</span>
+    <div>
+      <h1>Barry</h1>
+      <p>Your personal assistant</p>
+    </div>
+  </div>
+  <div class="status-pill">
+    <div class="dot" id="dot"></div>
+    <span id="status-text">Connecting…</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- Add a Job -->
+  <div class="card">
+    <div class="section-title">Add a Job</div>
+    <div class="field">
+      <label for="f-title">Title</label>
+      <input type="text" id="f-title" placeholder="e.g. Draft reply to John's enquiry">
+    </div>
+    <div class="field">
+      <label for="f-desc">Description</label>
+      <textarea id="f-desc" placeholder="Describe what you need Barry to do…"></textarea>
+    </div>
+    <div class="field">
+      <label for="f-pri">Priority</label>
+      <select id="f-pri">
+        <option value="High">High</option>
+        <option value="Medium" selected>Medium</option>
+        <option value="Low">Low</option>
+      </select>
+    </div>
+    <button class="btn btn-dark" onclick="addJob()">+ Add Job</button>
+  </div>
+
+  <!-- Jobs -->
+  <div class="card">
+    <div class="section-title">Jobs</div>
+    <div id="jobs-list"><div class="empty">No jobs yet — add one above!</div></div>
+  </div>
+
+  <!-- Log -->
+  <div class="card">
+    <div class="section-title">Activity Log</div>
+    <div id="log-list"><div class="empty">No activity yet.</div></div>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+const LABEL = {
+  waiting:  "Waiting",
+  working:  "Working on it…",
+  done:     "Done ✓",
+  stuck:    "Stuck",
+  needs_ok: "Needs your OK"
+};
+
+function esc(s) {
+  return String(s ?? "")
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function fmt(iso) {
+  try {
+    return new Date(iso).toLocaleString([], {
+      month:"short", day:"numeric", hour:"2-digit", minute:"2-digit"
+    });
+  } catch { return iso || ""; }
+}
+
+/* ── Render ─────────────────────────────────────────── */
+
+function renderJobs(jobs) {
+  const el = document.getElementById("jobs-list");
+  if (!jobs || !jobs.length) {
+    el.innerHTML = '<div class="empty">No jobs yet — add one above!</div>';
+    return;
+  }
+  const ord = {needs_ok:0, working:1, waiting:2, stuck:3, done:4};
+  const por = {High:0, Medium:1, Low:2};
+  const list = [...jobs].sort((a,b) => {
+    const s = (ord[a.status]??5) - (ord[b.status]??5);
+    return s !== 0 ? s : (por[a.priority]??3) - (por[b.priority]??3);
+  });
+
+  el.innerHTML = list.map(j => `
+    <div class="job ${esc(j.status??"")}">
+      <div class="job-top">
+        <div class="job-title">${esc(j.title)}</div>
+        <div class="job-right">
+          <span class="p-${esc(j.priority)}">${esc(j.priority)}</span>
+          <span class="badge b-${esc(j.status??"waiting")}">${esc(LABEL[j.status] ?? j.status)}</span>
+        </div>
+      </div>
+      ${j.description ? `<div class="job-desc">${esc(j.description)}</div>` : ""}
+      ${j.result_note ? `<div class="job-result">${esc(j.result_note)}</div>` : ""}
+      ${j.status === "needs_ok" ? `
+        <div class="job-actions">
+          <button class="btn btn-green" onclick="approve('${esc(j.id)}')">✓ Yes, looks good</button>
+          <button class="btn btn-red"   onclick="deny('${esc(j.id)}')">✗ No, cancel</button>
+        </div>` : ""}
+    </div>
+  `).join("");
+}
+
+function renderLog(log) {
+  const el = document.getElementById("log-list");
+  if (!log || !log.length) {
+    el.innerHTML = '<div class="empty">No activity yet.</div>';
+    return;
+  }
+  const rows = [...log].reverse().slice(0, 40);
+  el.innerHTML = rows.map(e => {
+    const cls = e.outcome === "done" ? "log-done"
+              : e.outcome === "stuck" ? "log-stuck"
+              : e.outcome === "needs_ok" ? "log-ok"
+              : "log-wait";
+    return `<div class="log-row">
+      <span class="log-time">${fmt(e.time)}</span>
+      <span class="log-body">
+        <span class="log-name">${esc(e.job_title)}</span>
+        <span style="color:var(--muted)"> — ${esc(e.action)}</span>
+        <span class="${cls}"> (${esc(e.outcome)})</span>
+      </span>
+    </div>`;
+  }).join("");
+}
+
+/* ── Load ───────────────────────────────────────────── */
+
+async function load() {
+  try {
+    const r = await fetch("/api/tasks");
+    if (!r.ok) throw new Error("server error");
+    const d = await r.json();
+    document.getElementById("dot").className = "dot";
+    document.getElementById("status-text").textContent = "Running — checks every 2 min";
+    renderJobs(d.jobs ?? []);
+    renderLog(d.log  ?? []);
+  } catch {
+    document.getElementById("dot").className = "dot off";
+    document.getElementById("status-text").textContent = "Cannot reach Barry";
+  }
+}
+
+/* ── Actions ─────────────────────────────────────────── */
+
+async function addJob() {
+  const title = document.getElementById("f-title").value.trim();
+  const desc  = document.getElementById("f-desc").value.trim();
+  const pri   = document.getElementById("f-pri").value;
+  if (!title) { document.getElementById("f-title").focus(); return; }
+  const r = await fetch("/api/jobs", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ title, description: desc, priority: pri })
+  });
+  if (!r.ok) { alert("Error — is Barry running?"); return; }
+  document.getElementById("f-title").value = "";
+  document.getElementById("f-desc").value  = "";
+  document.getElementById("f-pri").value   = "Medium";
+  await load();
+}
+
+async function approve(id) {
+  await fetch(`/api/jobs/${id}/approve`, { method: "POST" });
+  await load();
+}
+
+async function deny(id) {
+  await fetch(`/api/jobs/${id}/deny`, { method: "POST" });
+  await load();
+}
+
+/* ── Boot ────────────────────────────────────────────── */
+load();
+setInterval(load, 5000);
+</script>
+</body>
+</html>
