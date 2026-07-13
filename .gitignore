@@ -1,0 +1,24 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# env files — never commit secrets or credentials
+.env
+.env*.local
+
+# database — never commit real attendee data
+/prisma/dev.db
+/prisma/dev.db-journal
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# logs
+npm-debug.log*
