@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getEventById } from "@/server/services/eventService";
 import { RegistrationForm } from "@/components/registrations/RegistrationForm";
@@ -27,32 +28,37 @@ export default async function EventDetailPage({ params }: { params: { eventId: s
   const isClosed = event.endsAt < new Date();
 
   return (
-    <div className="grid gap-6 sm:grid-cols-5">
-      <div className="sm:col-span-3">
-        <h1 className="text-2xl font-semibold text-slate-900">{event.title}</h1>
-        <p className="mt-1 text-sm text-slate-500">{formatDateRange(event.startsAt, event.endsAt)}</p>
-        <p className="mt-1 text-sm text-slate-500">{event.location}</p>
-        {event.spotsRemaining != null ? (
-          <Badge tone={isFull ? "danger" : "success"} className="mt-3">
-            {isFull ? "Full" : `${event.spotsRemaining} spots left`}
-          </Badge>
-        ) : null}
-        <p className="mt-4 whitespace-pre-line text-sm text-slate-700">{event.description}</p>
-      </div>
+    <div>
+      <Link href="/" className="text-sm font-medium text-slate-600 hover:text-slate-900">
+        ← Back to events
+      </Link>
+      <div className="mt-4 grid gap-6 sm:grid-cols-5">
+        <div className="sm:col-span-3">
+          <h1 className="text-2xl font-semibold text-slate-900">{event.title}</h1>
+          <p className="mt-1 text-sm text-slate-500">{formatDateRange(event.startsAt, event.endsAt)}</p>
+          <p className="mt-1 text-sm text-slate-500">{event.location}</p>
+          {event.spotsRemaining != null ? (
+            <Badge tone={isFull ? "danger" : "success"} className="mt-3">
+              {isFull ? "Full" : `${event.spotsRemaining} spots left`}
+            </Badge>
+          ) : null}
+          <p className="mt-4 whitespace-pre-line text-sm text-slate-700">{event.description}</p>
+        </div>
 
-      <div className="sm:col-span-2">
-        <Card>
-          <h2 className="text-base font-semibold text-slate-900">Register</h2>
-          {isClosed ? (
-            <p className="mt-3 text-sm text-slate-500">Registration is closed for this event.</p>
-          ) : isFull ? (
-            <p className="mt-3 text-sm text-slate-500">This event is full.</p>
-          ) : (
-            <div className="mt-3">
-              <RegistrationForm eventId={event.id} />
-            </div>
-          )}
-        </Card>
+        <div className="sm:col-span-2">
+          <Card>
+            <h2 className="text-base font-semibold text-slate-900">Register</h2>
+            {isClosed ? (
+              <p className="mt-3 text-sm text-slate-500">Registration is closed for this event.</p>
+            ) : isFull ? (
+              <p className="mt-3 text-sm text-slate-500">This event is full.</p>
+            ) : (
+              <div className="mt-3">
+                <RegistrationForm eventId={event.id} />
+              </div>
+            )}
+          </Card>
+        </div>
       </div>
     </div>
   );

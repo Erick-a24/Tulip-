@@ -32,6 +32,7 @@ export default async function AdminDashboardPage() {
               <div>
                 <div className="flex items-center gap-2">
                   <h2 className="font-semibold text-slate-900">{event.title}</h2>
+                  {event.endsAt < new Date() ? <Badge tone="warning">Past</Badge> : null}
                   <Badge tone="neutral">
                     {event.registrationCount} registered
                     {event.spotsRemaining != null ? ` / ${event.registrationCount + event.spotsRemaining}` : ""}

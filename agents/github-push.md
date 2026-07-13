@@ -16,7 +16,7 @@ Run this agent whenever you want to save your current work to GitHub.
    ```
    git commit -m "[user's message]
 
-   Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
+   Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>"
    ```
 6. Push: `git push origin main`
 7. Confirm success and show the GitHub URL.

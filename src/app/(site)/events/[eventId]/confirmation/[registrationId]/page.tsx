@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getRegistrationById } from "@/server/services/registrationService";
 import { generateCheckInQrCode } from "@/server/qrcode";
@@ -57,6 +58,13 @@ export default async function ConfirmationPage({
       <p className="mt-4 text-sm text-slate-500">
         Show this code at check-in on the day of the event.
       </p>
+
+      <Link
+        href="/"
+        className="mt-6 inline-block text-sm font-medium text-slate-600 hover:text-slate-900"
+      >
+        ← Back to events
+      </Link>
     </div>
   );
 }

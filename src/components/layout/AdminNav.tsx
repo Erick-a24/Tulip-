@@ -36,9 +36,14 @@ export function AdminNav() {
             </Link>
           </nav>
         </div>
-        <Button variant="ghost" onClick={handleLogout} disabled={signingOut}>
-          {signingOut ? "Signing out…" : "Sign out"}
-        </Button>
+        <div className="flex items-center gap-4">
+          <Link href="/" className="text-sm font-medium text-slate-600 hover:text-slate-900">
+            View public site
+          </Link>
+          <Button variant="ghost" onClick={handleLogout} disabled={signingOut}>
+            {signingOut ? "Signing out…" : "Sign out"}
+          </Button>
+        </div>
       </div>
     </header>
   );
