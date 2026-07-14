@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Admin {
@@ -37,8 +38,9 @@ model Attendee {
   registrations Registration[]
 }
 
-// SQLite has no native enum support in Prisma, so status is a plain string.
-// Valid values ("REGISTERED" | "CHECKED_IN" | "CANCELLED") are enforced in
+// status is a plain string rather than a native Postgres enum, matching how
+// it was originally modeled under SQLite (which has no enum support). Valid
+// values ("REGISTERED" | "CHECKED_IN" | "CANCELLED") are enforced in
 // application code — see RegistrationStatusValue in src/types/index.ts.
 model Registration {
   id          String    @id @default(cuid())
