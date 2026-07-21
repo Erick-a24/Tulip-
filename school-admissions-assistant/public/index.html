@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>School Admissions & Marketing Assistant</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="app-header">
+  <button id="logout-btn" class="logout-btn" type="button">Log out</button>
+  <h1>School Admissions &amp; Marketing Assistant</h1>
+  <p class="subtitle">Ask about admissions, programmes, and campus visits — or get help drafting parent emails, website copy, and announcements.</p>
+</header>
+
+<main class="chat-wrap">
+  <div id="conversation" class="conversation" aria-live="polite">
+    <div class="message assistant">
+      <div class="bubble">Hello! I'm the Silverleaf Academy Admissions &amp; Marketing Assistant. Ask me a question, or ask me to draft something — a parent email, a social media caption, an event announcement, and more.</div>
+    </div>
+  </div>
+  <div id="loading" class="loading" hidden>
+    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+  </div>
+</main>
+
+<form id="chat-form" class="chat-form">
+  <textarea id="input" placeholder="Type your question or request…" rows="2" required></textarea>
+  <button type="submit" id="send-btn">Send</button>
+</form>
+
+<script src="/app.js"></script>
+</body>
+</html>
