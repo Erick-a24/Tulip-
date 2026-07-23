@@ -5,6 +5,7 @@ const crypto = require("crypto");
 const express = require("express");
 const session = require("express-session");
 const Anthropic = require("@anthropic-ai/sdk");
+const { DatabaseSync } = require("node:sqlite");
 
 const PORT = process.env.PORT || 3000;
 
@@ -18,6 +19,22 @@ if (missingEnvVars.length > 0) {
 }
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+const db = new DatabaseSync(path.join(__dirname, "data.sqlite"));
+db.exec(`
+  CREATE TABLE IF NOT EXISTS conversations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    question TEXT NOT NULL,
+    answer TEXT NOT NULL,
+    created_at TEXT NOT NULL
+  )
+`);
+const insertConversation = db.prepare(
+  "INSERT INTO conversations (question, answer, created_at) VALUES (?, ?, ?)"
+);
+const listConversations = db.prepare(
+  "SELECT id, question, answer, created_at FROM conversations ORDER BY id DESC LIMIT 200"
+);
 
 function safeCompare(a, b) {
   const bufA = Buffer.from(String(a ?? ""));
@@ -71,7 +88,15 @@ app.use(
 app.use(express.static(path.join(__dirname, "public"), { index: false }));
 
 app.get("/", requirePageAuth, (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "views", "index.html"));
+});
+
+app.get("/history", requirePageAuth, (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "history.html"));
+});
+
+app.get("/api/history", requireApiAuth, (req, res) => {
+  res.json({ conversations: listConversations.all() });
 });
 
 app.post("/api/login", (req, res) => {
@@ -120,6 +145,13 @@ app.post("/api/chat", requireApiAuth, async (req, res) => {
       .filter((block) => block.type === "text")
       .map((block) => block.text)
       .join("\n");
+
+    const lastUserMessage = sanitizedMessages.filter((m) => m.role === "user").pop();
+    try {
+      insertConversation.run(lastUserMessage?.content ?? "", reply, new Date().toISOString());
+    } catch (dbError) {
+      console.error("Failed to save conversation history:", dbError.message);
+    }
 
     res.json({ reply });
   } catch (error) {

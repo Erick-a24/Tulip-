@@ -51,6 +51,58 @@ body {
 }
 .logout-btn:hover { background: #1f2937; }
 
+.app-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+.app-nav a {
+  color: #cbd5e1;
+  text-decoration: underline;
+}
+.app-nav a:hover { color: #fff; }
+
+.history-wrap {
+  flex: 1;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.history-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.history-timestamp {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.history-question, .history-answer {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.history-question { margin-bottom: 6px; }
+
+.history-empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 24px 0;
+}
+
 .login-wrap {
   flex: 1;
   display: flex;
