@@ -3,25 +3,73 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>School Admissions & Marketing Assistant</title>
+<title>The Admin — Silverleaf Academy</title>
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
 <header class="app-header">
   <button id="logout-btn" class="logout-btn" type="button">Log out</button>
-  <h1>School Admissions &amp; Marketing Assistant</h1>
-  <p class="subtitle">Ask about admissions, programmes, and campus visits — or get help drafting parent emails, website copy, and announcements.</p>
+  <h1>The Admin</h1>
+  <p class="subtitle">Silverleaf Academy's admissions &amp; marketing assistant.</p>
   <nav class="app-nav">
     <a href="/history">View question history</a>
     <a href="/brochure.pdf" download>Download school brochure (PDF)</a>
   </nav>
 </header>
 
+<nav class="main-nav" id="main-nav">
+  <div class="nav-item">
+    <button class="nav-btn" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="admissions">Admissions ▾</button>
+    <div class="dropdown-panel" id="dropdown-admissions">
+      <div class="dropdown-section">
+        <h4>Daycare <span class="dd-price">1,600,000/=</span></h4>
+      </div>
+      <div class="dropdown-section">
+        <h4>Pre-Primary (KG1 &amp; KG2) <span class="dd-price">1,800,000/=</span></h4>
+      </div>
+      <div class="dropdown-section">
+        <h4>Primary (G1–G7) <span class="dd-price">1,850,000/=</span></h4>
+      </div>
+      <p class="dropdown-note">Admission fee: 50,000/=. Fees paid in 4 instalments across the year; not inclusive of examination and remedial fees.</p>
+    </div>
+  </div>
+
+  <div class="nav-item">
+    <button class="nav-btn" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="programs">Programs ▾</button>
+    <div class="dropdown-panel" id="dropdown-programs">
+      <ul class="dropdown-list">
+        <li><span class="dd-icon">🌐</span><div><strong>English Mastery</strong><p>The language of opportunity, from pre-primary.</p></div></li>
+        <li><span class="dd-icon">📚</span><div><strong>Academic Attainment</strong><p>Rigorous, outcome-evidenced, above national benchmarks.</p></div></li>
+        <li><span class="dd-icon">💻</span><div><strong>Digital Fluency</strong><p>Purposeful use of digital and AI tools for learning and creation.</p></div></li>
+        <li><span class="dd-icon">🧘</span><div><strong>Student Wellness</strong><p>Social-emotional development alongside academic growth.</p></div></li>
+        <li><span class="dd-icon">🎨</span><div><strong>Co-curricular Enrichment</strong><p>Confident, curious, well-rounded learners.</p></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="nav-item">
+    <button class="nav-btn" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="services">Services ▾</button>
+    <div class="dropdown-panel" id="dropdown-services">
+      <div class="dropdown-section">
+        <h4>🏠 Boarding</h4>
+        <ul class="dropdown-sublist">
+          <li>Full Boarding <span class="dd-price">950,000/=</span></li>
+          <li>Weekly Boarding (Mon–Fri) <span class="dd-price">800,000/=</span></li>
+        </ul>
+      </div>
+      <div class="dropdown-section">
+        <h4>🚌 Transport</h4>
+        <p class="dropdown-note">Annual fee: 550,000/= to 1,000,000/=, depending on distance.</p>
+      </div>
+    </div>
+  </div>
+</nav>
+
 <main class="chat-wrap">
   <div id="conversation" class="conversation" aria-live="polite">
     <div class="message assistant">
-      <div class="bubble">Hello! I'm the Silverleaf Academy Admissions &amp; Marketing Assistant. Ask me a question, or ask me to draft something — a parent email, a social media caption, an event announcement, and more.</div>
+      <div class="bubble">Hello! I'm The Admin, Silverleaf Academy's admissions &amp; marketing assistant. Choose an option above, or type your question below.</div>
     </div>
   </div>
   <div id="loading" class="loading" hidden>
@@ -34,6 +82,7 @@
   <button type="submit" id="send-btn">Send</button>
 </form>
 
+<script src="/nav.js"></script>
 <script src="/app.js"></script>
 </body>
 </html>
