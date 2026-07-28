@@ -3,15 +3,16 @@
   --border: #e2e5ea;
   --text: #1f2937;
   --muted: #6b7280;
-  --primary: #1d4ed8;
-  --primary-dark: #1e40af;
-  --user-bubble: #1d4ed8;
+  --navy: #0d2b4e;
+  --navy-dark: #081a30;
+  --primary: var(--navy);
+  --primary-dark: var(--navy-dark);
+  --user-bubble: var(--navy);
   --assistant-bubble: #eef1f5;
   --decor-green: #22c55e;
   --decor-blue: #3b82f6;
   --decor-orange: #f97316;
   --decor-yellow: #eab308;
-  --navy: #0f2540;
   --soft-green: #e8f5ee;
   --soft-green-text: #166534;
   --gold: #c9922a;
@@ -35,10 +36,11 @@ body {
 
 .app-header {
   position: relative;
-  background: #111827;
+  background: var(--navy);
   color: #fff;
   padding: 18px 24px;
   text-align: center;
+  border-bottom: 3px solid var(--gold);
 }
 .app-header h1 { font-size: 1.35rem; margin: 0 0 4px; }
 .app-header .subtitle {
@@ -49,7 +51,7 @@ body {
   position: absolute;
   top: 16px;
   right: 20px;
-  border: 1px solid #374151;
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 8px;
   background: transparent;
   color: #e5e7eb;
@@ -57,7 +59,7 @@ body {
   padding: 6px 12px;
   cursor: pointer;
 }
-.logout-btn:hover { background: #1f2937; }
+.logout-btn:hover { background: rgba(255, 255, 255, 0.12); }
 
 .app-nav {
   display: flex;
