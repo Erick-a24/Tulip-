@@ -6,12 +6,16 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "smoke-test": "node e2e/smoke-test.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-session": "^1.19.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
   }
 }
