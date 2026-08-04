@@ -2,7 +2,7 @@ const BASE = process.env.TARGET_URL || "https://school-admissions-assistant.onre
 const failures = [];
 
 function check(name, condition, detail) {
-  console.log(`${condition ? "PASS" : "FAIL"} — ${name}${detail ? ` (${detail})` : ""}`);
+  console.log(`${condition ? "PASS" : "FAIL"} - ${name}${detail ? ` (${detail})` : ""}`);
   if (!condition) failures.push(`${name}: ${detail}`);
 }
 
@@ -67,7 +67,7 @@ async function withColdStartRetry(fn, attempts = 3, delayMs = 8000) {
     failures.forEach((f) => console.log(" - " + f));
     process.exit(1);
   } else {
-    console.log("\nSMOKE TEST: PASSED — all checks green");
+    console.log("\nSMOKE TEST: PASSED - all checks green");
     process.exit(0);
   }
 })();
