@@ -17,6 +17,21 @@ if ($exitCode -ne 0) {
 
     Add-Content -Path $logPath -Value "$timestamp TRIGGERED_BY=$triggeredBy FAILED: $failLines"
 
+    # A durable alert file, in addition to the live toast - evidence that survives
+    # even if the notification wasn't seen or a screenshot wasn't taken in time.
+    $alertsDir = "C:\Users\Oggu\Documents\Tulip\school-admissions-assistant\e2e\alerts"
+    if (-not (Test-Path $alertsDir)) { New-Item -ItemType Directory -Path $alertsDir | Out-Null }
+    $compactTs = $timestamp -replace '[-:]', ''
+    $alertPath = Join-Path $alertsDir "alert-$compactTs.txt"
+    $target = if ($env:TARGET_URL) { $env:TARGET_URL } else { "https://school-admissions-assistant.onrender.com" }
+    @"
+Checkpoint scheduled smoke test FAILED
+utc=$timestamp
+triggered_by=$triggeredBy
+target=$target
+broken: $failLines
+"@ | Set-Content -Path $alertPath
+
     try {
         Import-Module BurntToast -ErrorAction Stop
         $shortMsg = $failLines.Substring(0, [Math]::Min(180, $failLines.Length))
