@@ -27,6 +27,8 @@ model Event {
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
   registrations Registration[]
+  layouts       Layout[]
+  leads         Lead[]
 }
 
 model Attendee {
@@ -55,5 +57,50 @@ model Registration {
   attendeeId String
   attendee   Attendee @relation(fields: [attendeeId], references: [id], onDelete: Cascade)
 
+  feedback Feedback[]
+
   @@unique([eventId, attendeeId])
+}
+
+// New entities added from the ERD (see school-admissions-assistant conversation history
+// for the corrected diagram) - uuid() ids to match the ERD's stated requirement, distinct
+// from the cuid() ids already used above, which are left as-is to avoid touching existing
+// production data and foreign keys.
+
+model Layout {
+  id           String   @id @default(uuid()) @db.Uuid
+  eventId      String
+  event        Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  tents        String?
+  movementArea String?
+  vendors      String?
+  createdAt    DateTime @default(now())
+}
+
+model ReferralSource {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String   @unique
+  createdAt DateTime @default(now())
+  leads     Lead[]
+}
+
+model Lead {
+  id               String          @id @default(uuid()) @db.Uuid
+  eventId          String
+  event            Event           @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  referralSourceId String?         @db.Uuid
+  referralSource   ReferralSource? @relation(fields: [referralSourceId], references: [id])
+  name             String
+  contact          String?
+  status           String          @default("Interested")
+  createdAt        DateTime        @default(now())
+}
+
+model Feedback {
+  id             String       @id @default(uuid()) @db.Uuid
+  registrationId String
+  registration   Registration @relation(fields: [registrationId], references: [id], onDelete: Cascade)
+  rating         Int?
+  comments       String?
+  submittedAt    DateTime     @default(now())
 }
