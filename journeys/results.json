@@ -1,0 +1,31 @@
+{
+  "results": [
+    {
+      "step": "01 - Open application (home page)",
+      "status": "PASS",
+      "detail": "h1: \"Upcoming events\""
+    },
+    {
+      "step": "02 - Find/view an event",
+      "status": "PASS",
+      "detail": "landed on event page \"Open Day — Kijenge Campus\", registration form present"
+    },
+    {
+      "step": "03 - Fill registration form",
+      "status": "PASS",
+      "detail": "name, email, phone filled"
+    },
+    {
+      "step": "04 - Submit registration",
+      "status": "PASS",
+      "detail": "form submitted, navigated to confirmation URL"
+    },
+    {
+      "step": "05 - Reach success/confirmation state",
+      "status": "PASS",
+      "detail": "heading: \"You're registered!\", QR code present: true"
+    }
+  ],
+  "consoleIssues": [],
+  "networkFailures": []
+}
