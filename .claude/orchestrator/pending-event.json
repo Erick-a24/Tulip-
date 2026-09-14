@@ -1,0 +1,12 @@
+{
+  "proposedEvent": {
+    "title": "Community Fun Day",
+    "description": "Games, food, and campus tours for the whole family.",
+    "location": "TBD",
+    "startsAt": "2026-10-10T08:00:00.000Z",
+    "endsAt": "2026-10-10T14:00:00.000Z",
+    "capacity": null
+  },
+  "requestedAt": "2026-09-07T13:46:00.000Z",
+  "note": "Re-verification write, after moving the hook config from settings.local.json to the committed settings.json, confirming it still fires from its new location."
+}

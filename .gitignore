@@ -22,3 +22,6 @@ next-env.d.ts
 
 # logs
 npm-debug.log*
+
+# claude code — machine-specific settings, not shared config
+.claude/settings.local.json
