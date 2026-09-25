@@ -32,6 +32,10 @@
           {
             "type": "command",
             "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File .claude/hooks/protect-rules.ps1"
+          },
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File .claude/hooks/check-claude-md-length.ps1"
           }
         ]
       },
@@ -41,6 +45,10 @@
           {
             "type": "command",
             "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File .claude/hooks/check-dangerous.ps1"
+          },
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File .claude/hooks/check-env-commit.ps1"
           }
         ]
       }
@@ -52,6 +60,16 @@
           {
             "type": "command",
             "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File .claude/hooks/check-code.ps1"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File .claude/hooks/session-end-log.ps1"
           }
         ]
       }

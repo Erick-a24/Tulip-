@@ -1,3 +1,9 @@
+---
+type: L3
+last_verified: 2026-09-25
+owner: it@silverleaf.co.tz
+---
+
 # Quality Rubric — The Admin
 
 Five YES/NO criteria for judging a single response produced by The Admin, for parents and

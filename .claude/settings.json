@@ -1,5 +1,37 @@
 {
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\Oggu\\Documents\\Tulip\\school-admissions-assistant\\.claude\\hooks\\check-secrets.ps1\""
+          },
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\Oggu\\Documents\\Tulip\\school-admissions-assistant\\.claude\\hooks\\protect-rules.ps1\""
+          },
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\Oggu\\Documents\\Tulip\\school-admissions-assistant\\.claude\\hooks\\check-claude-md-length.ps1\""
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\Oggu\\Documents\\Tulip\\school-admissions-assistant\\.claude\\hooks\\check-dangerous.ps1\""
+          },
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\Oggu\\Documents\\Tulip\\school-admissions-assistant\\.claude\\hooks\\check-env-commit.ps1\""
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Write",
@@ -7,6 +39,35 @@
           {
             "type": "command",
             "command": "node \"C:\\Users\\Oggu\\Documents\\Tulip\\.claude\\hooks\\orchestrator-trigger.js\""
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\Oggu\\Documents\\Tulip\\school-admissions-assistant\\.claude\\hooks\\check-code.ps1\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\Oggu\\Documents\\Tulip\\school-admissions-assistant\\.claude\\hooks\\session-start-beads.ps1\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\Oggu\\Documents\\Tulip\\school-admissions-assistant\\.claude\\hooks\\session-end-log.ps1\""
           }
         ]
       }

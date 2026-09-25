@@ -1,3 +1,9 @@
+---
+type: L3
+last_verified: 2026-09-25
+owner: it@silverleaf.co.tz
+---
+
 # Guardrail — The Admin
 
 **Task:** Draft marketing and communications content for staff to review before sending, including parent emails, event announcements, social captions, and follow-up messages.

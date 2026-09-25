@@ -1,3 +1,9 @@
+---
+type: L3
+last_verified: 2026-09-25
+owner: it@silverleaf.co.tz
+---
+
 # Skill: Draft Reply to Prospective Students or Parents
 
 ## Purpose
