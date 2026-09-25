@@ -19,7 +19,10 @@ Job says something like: "draft a reply to [name] about [topic]" or "respond to 
    - Address their question or concern directly in the first sentence
    - Include every relevant fact from the job description — never add made-up details
    - Mark any unconfirmed fee, date, or policy detail as a clear placeholder (e.g. `[INSERT FEE AMOUNT]`), per `guardrail.md`
-   - Close warmly with a clear next step or call to action
+   - Close with a *concrete* next step, not generic goodwill — a date, a phone
+     number, an office to contact, or what happens next. "Let us know if you
+     have questions" alone does not count; pair it with something specific
+     (e.g. "feel free to call the admissions office on [INSERT PHONE NUMBER]").
    - Sign off with owner's name/role if provided
 
 3. **Mark the job "needs my OK"** — never send the reply directly.

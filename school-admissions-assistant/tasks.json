@@ -6,6 +6,16 @@
                  },
     "jobs":  [
                  {
+                     "id":  "job_2026092511000000_2",
+                     "title":  "Draft reply to Mrs. Achieng",
+                     "description":  "Mrs. Achieng emailed asking whether Silverleaf offers a transport service from Njiro to the Usa River campus, and if so what the monthly cost is. We don\u0027t have the transport fee confirmed for this route yet.",
+                     "priority":  "Medium",
+                     "status":  "needs_ok",
+                     "result_note":  "DRAFT EMAIL - awaiting owner approval.\n\nSubject: Transport Service Enquiry - Njiro to Usa River\n\nDear Mrs. Achieng,\n\nThank you for reaching out about transport options for your child.\n\nYes, Silverleaf does offer a transport service between Njiro and the Usa River campus. I do not have the confirmed monthly cost for this specific route yet - [INSERT TRANSPORT FEE - NJIRO TO USA RIVER] - please confirm with the transport office before this goes out.\n\nOnce the fee is confirmed, I would be glad to share the pickup schedule and registration steps for the transport service.\n\nPlease feel free to call our admissions office if you have any further questions in the meantime.\n\nWarm regards,\nSilverleaf Academy Admissions\n\n---\nVerifier scores: Completeness=5 Accuracy=5 Usability=4 (avg 4.7 - Pass)",
+                     "created_at":  "2026-09-25T11:00:00.0000000Z",
+                     "updated_at":  "2026-09-25T10:32:47.5428286Z"
+                 },
+                 {
                      "id":  "job_2026091412000000_1",
                      "title":  "Draft reply to Mr. Kessy",
                      "description":  "Mr. Kessy emailed asking about the Grade 5 admission process and whether there\u0027s an entrance assessment. He also asked about the application deadline for the January intake. We don\u0027t have the exact deadline date confirmed yet for this intake.",
@@ -28,6 +38,20 @@
                     "time":  "2026-09-14T13:12:20.7667542Z",
                     "job_id":  "job_2026091412000000_1",
                     "job_title":  "Draft reply to Mr. Kessy",
+                    "action":  "Completed | Scores: completeness=5 accuracy=5 usability=4",
+                    "outcome":  "needs_ok"
+                },
+                {
+                    "time":  "2026-09-25T10:32:37.9988916Z",
+                    "job_id":  "job_2026092511000000_2",
+                    "job_title":  "Draft reply to Mrs. Achieng",
+                    "action":  "Started",
+                    "outcome":  "working"
+                },
+                {
+                    "time":  "2026-09-25T10:32:47.5508309Z",
+                    "job_id":  "job_2026092511000000_2",
+                    "job_title":  "Draft reply to Mrs. Achieng",
                     "action":  "Completed | Scores: completeness=5 accuracy=5 usability=4",
                     "outcome":  "needs_ok"
                 }
