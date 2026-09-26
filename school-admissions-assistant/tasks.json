@@ -1,62 +1,77 @@
-﻿{
-    "settings":  {
-                     "bot_name":  "The Admin",
-                     "check_interval_minutes":  2,
-                     "ask_before_risky":  true
-                 },
-    "jobs":  [
-                 {
-                     "id":  "job_2026092511000000_2",
-                     "title":  "Draft reply to Mrs. Achieng",
-                     "description":  "Mrs. Achieng emailed asking whether Silverleaf offers a transport service from Njiro to the Usa River campus, and if so what the monthly cost is. We don\u0027t have the transport fee confirmed for this route yet.",
-                     "priority":  "Medium",
-                     "status":  "needs_ok",
-                     "result_note":  "DRAFT EMAIL - awaiting owner approval.\n\nSubject: Transport Service Enquiry - Njiro to Usa River\n\nDear Mrs. Achieng,\n\nThank you for reaching out about transport options for your child.\n\nYes, Silverleaf does offer a transport service between Njiro and the Usa River campus. I do not have the confirmed monthly cost for this specific route yet - [INSERT TRANSPORT FEE - NJIRO TO USA RIVER] - please confirm with the transport office before this goes out.\n\nOnce the fee is confirmed, I would be glad to share the pickup schedule and registration steps for the transport service.\n\nPlease feel free to call our admissions office if you have any further questions in the meantime.\n\nWarm regards,\nSilverleaf Academy Admissions\n\n---\nVerifier scores: Completeness=5 Accuracy=5 Usability=4 (avg 4.7 - Pass)",
-                     "created_at":  "2026-09-25T11:00:00.0000000Z",
-                     "updated_at":  "2026-09-25T10:32:47.5428286Z"
-                 },
-                 {
-                     "id":  "job_2026091412000000_1",
-                     "title":  "Draft reply to Mr. Kessy",
-                     "description":  "Mr. Kessy emailed asking about the Grade 5 admission process and whether there\u0027s an entrance assessment. He also asked about the application deadline for the January intake. We don\u0027t have the exact deadline date confirmed yet for this intake.",
-                     "priority":  "High",
-                     "status":  "needs_ok",
-                     "result_note":  "DRAFT EMAIL - awaiting owner approval.\n\nSubject: Grade 5 Admission Enquiry\n\nDear Mr. Kessy,\n\nThank you for reaching out about Grade 5 admission at Silverleaf Academy.\n\nYes, Grade 5 applicants complete a short entrance assessment as part of the admission process, alongside the standard application form and required documents.\n\nRegarding the January intake application deadline: I do not have that exact date confirmed yet - [INSERT DEADLINE DATE] - please confirm with the admissions office before this goes out.\n\nOnce we have that date confirmed, I would be happy to share the full admission timeline so you can plan accordingly.\n\nPlease feel free to call our admissions office if you have any further questions in the meantime.\n\nWarm regards,\nSilverleaf Academy Admissions\n\n---\nVerifier scores: Completeness=5 Accuracy=5 Usability=4 (avg 4.7 - Pass)",
-                     "created_at":  "2026-09-14T12:00:00.0000000Z",
-                     "updated_at":  "2026-09-14T13:12:20.7511312Z"
-                 }
-             ],
-    "log":  [
-                {
-                    "time":  "2026-09-14T13:12:07.3366904Z",
-                    "job_id":  "job_2026091412000000_1",
-                    "job_title":  "Draft reply to Mr. Kessy",
-                    "action":  "Started",
-                    "outcome":  "working"
-                },
-                {
-                    "time":  "2026-09-14T13:12:20.7667542Z",
-                    "job_id":  "job_2026091412000000_1",
-                    "job_title":  "Draft reply to Mr. Kessy",
-                    "action":  "Completed | Scores: completeness=5 accuracy=5 usability=4",
-                    "outcome":  "needs_ok"
-                },
-                {
-                    "time":  "2026-09-25T10:32:37.9988916Z",
-                    "job_id":  "job_2026092511000000_2",
-                    "job_title":  "Draft reply to Mrs. Achieng",
-                    "action":  "Started",
-                    "outcome":  "working"
-                },
-                {
-                    "time":  "2026-09-25T10:32:47.5508309Z",
-                    "job_id":  "job_2026092511000000_2",
-                    "job_title":  "Draft reply to Mrs. Achieng",
-                    "action":  "Completed | Scores: completeness=5 accuracy=5 usability=4",
-                    "outcome":  "needs_ok"
-                }
-            ],
-    "corrections":  [
-
-                    ]
+{
+  "settings": {
+    "bot_name": "The Admin",
+    "check_interval_minutes": 2,
+    "ask_before_risky": true
+  },
+  "jobs": [
+    {
+      "id": "job_2026092511000000_2",
+      "title": "Draft reply to Mrs. Achieng",
+      "description": "Mrs. Achieng emailed asking whether Silverleaf offers a transport service from Njiro to the Usa River campus, and if so what the monthly cost is. We don't have the transport fee confirmed for this route yet.",
+      "priority": "Medium",
+      "status": "needs_ok",
+      "result_note": "DRAFT EMAIL - awaiting owner approval.\n\nSubject: Transport Service Enquiry - Njiro to Usa River\n\nDear Mrs. Achieng,\n\nThank you for reaching out about transport options for your child.\n\nYes, Silverleaf does offer a transport service between Njiro and the Usa River campus. I do not have the confirmed monthly cost for this specific route yet - [INSERT TRANSPORT FEE - NJIRO TO USA RIVER] - please confirm with the transport office before this goes out.\n\nOnce the fee is confirmed, I would be glad to share the pickup schedule and registration steps for the transport service.\n\nPlease feel free to call our admissions office if you have any further questions in the meantime.\n\nWarm regards,\nSilverleaf Academy Admissions\n\n---\nVerifier scores: Completeness=5 Accuracy=5 Usability=4 (avg 4.7 - Pass)",
+      "created_at": "2026-09-25T11:00:00.0000000Z",
+      "updated_at": "2026-09-25T10:32:47.5428286Z"
+    },
+    {
+      "id": "job_2026091412000000_1",
+      "title": "Draft reply to Mr. Kessy",
+      "description": "Mr. Kessy emailed asking about the Grade 5 admission process and whether there's an entrance assessment. He also asked about the application deadline for the January intake. We don't have the exact deadline date confirmed yet for this intake.",
+      "priority": "High",
+      "status": "needs_ok",
+      "result_note": "DRAFT EMAIL - awaiting owner approval.\n\nSubject: Grade 5 Admission Enquiry\n\nDear Mr. Kessy,\n\nThank you for reaching out about Grade 5 admission at Silverleaf Academy.\n\nYes, Grade 5 applicants complete a short entrance assessment as part of the admission process, alongside the standard application form and required documents.\n\nRegarding the January intake application deadline: I do not have that exact date confirmed yet - [INSERT DEADLINE DATE] - please confirm with the admissions office before this goes out.\n\nOnce we have that date confirmed, I would be happy to share the full admission timeline so you can plan accordingly.\n\nPlease feel free to call our admissions office if you have any further questions in the meantime.\n\nWarm regards,\nSilverleaf Academy Admissions\n\n---\nVerifier scores: Completeness=5 Accuracy=5 Usability=4 (avg 4.7 - Pass)",
+      "created_at": "2026-09-14T12:00:00.0000000Z",
+      "updated_at": "2026-09-14T13:12:20.7511312Z"
+    },
+    {
+      "id": "job_20260926132003046_escalated",
+      "title": "ESCALATED: Draft reply to Mr. Temba (escalation test — never fixed)",
+      "description": "He emailed asking two things: (1) what the school's policy is on students bringing personal tablets/laptops to class, and (2) whether Silverleaf offers an after-school coding club. What we know: students are permitted to bring personal tablets for classroom use with teacher permission; phones must remain in bags during school hours. Nothing further was provided.",
+      "priority": "High",
+      "status": "stuck",
+      "result_note": "Escalated after 4 attempt(s), none passed the critic.\n\nFull trail:\nAttempt 1: FAIL — Closing has no concrete next step — no phone number, date, office, or explicit \"reply by / call us on\" action found near the end of the draft. Generic goodwill (\"let us know if you have questions\") does not satisfy this.\n---draft---\nDRAFT EMAIL - awaiting owner approval.\n\nDear Mr. Temba,\n\nThank you for reaching out with your questions.\n\nRegarding personal devices: students are permitted to bring personal tablets for classroom use, with teacher permission. Phones must remain in students' bags during school hours.\n\nRegarding an after-school coding club: [INSERT INFORMATION ON AFTER-SCHOOL CODING CLUB - NOT YET CONFIRMED].\n\nPlease let us know if you have any further questions - we're happy to help.\n\nWarm regards,\nSilverleaf Academy Admissions Office\n\nAttempt 2: FAIL — Closing has no concrete next step — no phone number, date, office, or explicit \"reply by / call us on\" action found near the end of the draft. Generic goodwill (\"let us know if you have questions\") does not satisfy this.\n---draft---\nDRAFT EMAIL - awaiting owner approval.\n\nDear Mr. Temba,\n\nThank you for reaching out with your questions.\n\nRegarding personal devices: students are permitted to bring personal tablets for classroom use, with teacher permission. Phones must remain in students' bags during school hours.\n\nRegarding an after-school coding club: [INSERT INFORMATION ON AFTER-SCHOOL CODING CLUB - NOT YET CONFIRMED].\n\nPlease let us know if you have any further questions - we're happy to help.\n\nWarm regards,\nSilverleaf Academy Admissions Office\n\nAttempt 3: FAIL — Closing has no concrete next step — no phone number, date, office, or explicit \"reply by / call us on\" action found near the end of the draft. Generic goodwill (\"let us know if you have questions\") does not satisfy this.\n---draft---\nDRAFT EMAIL - awaiting owner approval.\n\nDear Mr. Temba,\n\nThank you for reaching out with your questions.\n\nRegarding personal devices: students are permitted to bring personal tablets for classroom use, with teacher permission. Phones must remain in students' bags during school hours.\n\nRegarding an after-school coding club: [INSERT INFORMATION ON AFTER-SCHOOL CODING CLUB - NOT YET CONFIRMED].\n\nPlease let us know if you have any further questions - we're happy to help.\n\nWarm regards,\nSilverleaf Academy Admissions Office\n\nAttempt 4: FAIL — Closing has no concrete next step — no phone number, date, office, or explicit \"reply by / call us on\" action found near the end of the draft. Generic goodwill (\"let us know if you have questions\") does not satisfy this.\n---draft---\nDRAFT EMAIL - awaiting owner approval.\n\nDear Mr. Temba,\n\nThank you for reaching out with your questions.\n\nRegarding personal devices: students are permitted to bring personal tablets for classroom use, with teacher permission. Phones must remain in students' bags during school hours.\n\nRegarding an after-school coding club: [INSERT INFORMATION ON AFTER-SCHOOL CODING CLUB - NOT YET CONFIRMED].\n\nPlease let us know if you have any further questions - we're happy to help.\n\nWarm regards,\nSilverleaf Academy Admissions Office",
+      "created_at": "2026-09-26T13:20:03.046Z",
+      "updated_at": "2026-09-26T13:20:03.046Z"
+    }
+  ],
+  "log": [
+    {
+      "time": "2026-09-14T13:12:07.3366904Z",
+      "job_id": "job_2026091412000000_1",
+      "job_title": "Draft reply to Mr. Kessy",
+      "action": "Started",
+      "outcome": "working"
+    },
+    {
+      "time": "2026-09-14T13:12:20.7667542Z",
+      "job_id": "job_2026091412000000_1",
+      "job_title": "Draft reply to Mr. Kessy",
+      "action": "Completed | Scores: completeness=5 accuracy=5 usability=4",
+      "outcome": "needs_ok"
+    },
+    {
+      "time": "2026-09-25T10:32:37.9988916Z",
+      "job_id": "job_2026092511000000_2",
+      "job_title": "Draft reply to Mrs. Achieng",
+      "action": "Started",
+      "outcome": "working"
+    },
+    {
+      "time": "2026-09-25T10:32:47.5508309Z",
+      "job_id": "job_2026092511000000_2",
+      "job_title": "Draft reply to Mrs. Achieng",
+      "action": "Completed | Scores: completeness=5 accuracy=5 usability=4",
+      "outcome": "needs_ok"
+    },
+    {
+      "time": "2026-09-26T13:20:03.046Z",
+      "job_id": "job_20260926132003046_escalated",
+      "job_title": "ESCALATED: Draft reply to Mr. Temba (escalation test — never fixed)",
+      "action": "Escalated to human after 4 failed attempt(s)",
+      "outcome": "stuck"
+    }
+  ],
+  "corrections": []
 }

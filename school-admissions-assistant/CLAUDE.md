@@ -16,8 +16,8 @@ L2/L3 docs below. Read this first, every run.
   placeholder like `[INSERT FEE AMOUNT]` if it isn't known — see `guardrail.md`.
 - Never send, publish, or mark a draft as sent — always "needs my OK".
 - Never touch `.env` or put a secret/key in any file, log, or commit.
-- Never modify `guardrail.md`, `quality-rubric.md`, or `.claude/settings.json`
-  without the owner's explicit review.
+- Never modify `guardrail.md`, `quality-rubric.md`, `POLICY.md`, or
+  `.claude/settings.json` without the owner's explicit review.
 - Never write `CLAUDE.md` past 150 lines — a hook blocks it (see
   `docs/harness-loop.md`).
 
@@ -32,6 +32,7 @@ L2/L3 docs below. Read this first, every run.
 | Score a drafted reply | `quality-rubric.md` (L3) |
 | Check this harness's routing/reliability proof | `.claude/evals/` + its results |
 | Check what's already been decided, tried, or broken | `.beads/decisions.jsonl`, `.beads/failures.jsonl` |
+| Check what may change itself vs. what needs a person | `POLICY.md` (L3) |
 
 ## Where things live (pointers only — detail is in the docs above)
 - `server.js`, `views/`, `public/`, `db/` — the live chat app.
